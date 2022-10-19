@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PhraseInterface } from '../shared/phrase.interface';
-import { PhrasesService } from '../shared/phrases.service';
+import { PhraseInterface } from '../../shared/phrase.interface';
+import { PhrasesService } from '../../shared/phrases.service';
 
 @Component({
   selector: 'app-phrases-list',
