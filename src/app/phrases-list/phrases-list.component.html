@@ -1,0 +1,7 @@
+<h2>Phrases List</h2>
+
+<ul>
+  <li *ngFor="let phrase of phrases"  (click)="onSelect(phrase)">
+    {{phrase.value}}
+  </li>
+</ul>
