@@ -5,7 +5,7 @@ import { PhrasesListComponent } from './phrases-list/phrases-list.component';
 
 const routes: Routes = [
   {path: 'phrases', component: PhrasesListComponent},
-  {path: 'phrase/:id', component: PhraseDetailsComponent}
+  {path: 'phrases/:id', component: PhraseDetailsComponent}
 ];
 
 @NgModule({

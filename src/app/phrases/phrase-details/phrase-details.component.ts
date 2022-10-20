@@ -43,11 +43,18 @@ export class PhraseDetailsComponent implements OnInit {
   }
 
   gotoPhrasesList(): void {
-    this.router.navigate(['/phrases', {
+    // /segment1/segment2/segment3
+    // ../ => /segment1/segment2
+    // ../ => /segment1
+
+    // /phrases/id => ../phrases
+    this.router.navigate(['../', {
       id: this.phrase?.id,
       param1: 'test',
       param2: 123
-    }]).then();
+    }], {
+      relativeTo: this.activatedRoute
+    }).then();
   }
 
 }
