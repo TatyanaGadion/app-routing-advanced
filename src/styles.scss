@@ -71,4 +71,9 @@ li {
     background-color: lightcoral;
     padding-left: 1em;
   }
+  &.selected {
+    background-color: lightskyblue;
+    padding-left: 1em;
+    font-weight: bold;
+  }
 }

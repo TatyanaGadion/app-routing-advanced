@@ -43,7 +43,11 @@ export class PhraseDetailsComponent implements OnInit {
   }
 
   gotoPhrasesList(): void {
-    this.router.navigate(['/phrases']).then();
+    this.router.navigate(['/phrases', {
+      id: this.phrase?.id,
+      param1: 'test',
+      param2: 123
+    }]).then();
   }
 
 }
