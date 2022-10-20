@@ -38,7 +38,7 @@ export class PhrasesListComponent implements OnInit {
 
   onSelect(phrase: PhraseInterface): void {
     //url/phrase/1
-    this.router.navigate(['phrase', phrase.id]).then();
+    this.router.navigate(['phrases', phrase.id]).then();
   }
 
   isSelected(phrase: PhraseInterface): boolean {
