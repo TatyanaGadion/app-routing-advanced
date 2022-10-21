@@ -1,8 +1,9 @@
 <h1>App Routing Advanced</h1>
 
 <nav>
-  <a [routerLink]="['/home']">Home</a>
-  <a [routerLink]="['/phrases']">Phrases</a>
+  <a [routerLink]="['/home']" [routerLinkActive]="'active'">Home</a>
+  <a [routerLink]="['/phrases']" [routerLinkActive]="'active'">Phrases</a>
+  <a [routerLink]="['admin']" [routerLinkActive]="'active'">Admin</a>
 </nav>
 
 <router-outlet></router-outlet>
