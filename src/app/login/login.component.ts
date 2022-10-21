@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../shared/auth.service';
 
 @Component({
@@ -13,18 +14,31 @@ export class LoginComponent implements OnInit {
   userPassword: string = '123';
 
   constructor(
-    public authService: AuthService
+    public authService: AuthService,
+    private router: Router
   ) { }
 
-  ngOnInit(): void { }
-
-  login(): void {
-    this.setMessage('Ttying to log in ...')
-    this.authService.login(this.userLogin, this.userPassword);
+  ngOnInit(): void {
     this.setMessage();
   }
 
-  logout(): void {}
+  login(): void {
+    this.setMessage('Ttying to log in ...')
+    this.authService.login(this.userLogin, this.userPassword).then(res => {
+      console.log(`Login promise result ${res}`);
+      this.setMessage();
+
+      if(!this.authService.isLoggedIn) return
+
+      const redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/admin'
+      this.router.navigate([redirect]).then()
+    });
+  }
+
+  logout(): void {
+    this.authService.logout();
+    this.setMessage();
+  }
 
   private setMessage(msg: string = ''): void {
     if (msg) {
