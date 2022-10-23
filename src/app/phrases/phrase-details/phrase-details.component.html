@@ -4,14 +4,29 @@
   <h3>Selected Phrase Details</h3>
 
   <div>ID: {{phrase?.id}}</div>
-  <div>Value: {{phrase?.value}}</div>
-  <div>Language: {{phrase?.language}}</div>
+
+
+  <ng-container *ngIf="!authService.isLoggedIn; then isAuth; else notIssAuth"></ng-container>
 </ng-template>
 
 <ng-template #elseBlock>
-  <h3>loading...</h3>
+  <h3>Details not faund!</h3>
 </ng-template>
 
 <div class="btn-group">
   <button (click)="gotoPhrasesList()">Go to phrases list</button>
 </div>
+
+
+<ng-template #isAuth>
+  <div>Value: <input type="text" [(ngModel)]="editValue"></div>
+  <div>Language: <input type="text" [(ngModel)]="editLanguage"></div>
+  <div class="inline-btn" *ngIf="isChanged()">
+    <button type="button" (click)="save()">Save</button>
+  </div>
+</ng-template>
+
+<ng-template #notIssAuth>
+  <div>Value: {{phrase?.value}}</div>
+  <div>Language: {{phrase?.language}}</div>
+</ng-template>

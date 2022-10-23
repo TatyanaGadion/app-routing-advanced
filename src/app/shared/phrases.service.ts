@@ -2,11 +2,13 @@ import { Injectable } from '@angular/core';
 import { PHRASES } from './mock.data';
 import { PhraseInterface } from './phrase.interface';
 
-const phrasesPromise: Promise<PhraseInterface[]> = new Promise ((resolve) => {
-  setTimeout(() => {
-    resolve(PHRASES)
-  }, 2000)
-})
+// const phrasesPromise: Promise<PhraseInterface[]> = new Promise ((resolve) => {
+//   setTimeout(() => {
+//     resolve(PHRASES)
+//   }, 2000)
+// })
+
+const phrasesPromise: Promise<PhraseInterface[]> = Promise.resolve(PHRASES);
 
 @Injectable({
   providedIn: 'root'

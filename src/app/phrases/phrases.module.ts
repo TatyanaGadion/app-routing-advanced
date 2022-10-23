@@ -4,6 +4,7 @@ import { PhrasesRoutingModule } from './phrases-routing.module';
 import { PhraseDetailsComponent } from './phrase-details/phrase-details.component';
 import { PhrasesListComponent } from './phrases-list/phrases-list.component';
 import { PhrasesHostComponent } from './phrases-host/phrases-host.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { PhrasesHostComponent } from './phrases-host/phrases-host.component';
   ],
   imports: [
     CommonModule,
-    PhrasesRoutingModule
+    PhrasesRoutingModule,
+    FormsModule
   ]
 })
 export class PhrasesModule { }

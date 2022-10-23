@@ -77,3 +77,12 @@ li {
     font-weight: bold;
   }
 }
+
+.inline-btn {
+  display: inline-block;
+  margin-right: 1em;
+
+  +.btn-group {
+    display: inline-block;
+  }
+}

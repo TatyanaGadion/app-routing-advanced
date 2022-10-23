@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CanDeactivateGuard } from '../shared/can-deactivate.guard';
 import { PhraseDetailsComponent } from './phrase-details/phrase-details.component';
 import { PhrasesHostComponent } from './phrases-host/phrases-host.component';
 import { PhrasesListComponent } from './phrases-list/phrases-list.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
         children: [
           {
             path: ':id',
-            component: PhraseDetailsComponent
+            component: PhraseDetailsComponent,
+            canDeactivate: [CanDeactivateGuard]
           }
         ]
       },
